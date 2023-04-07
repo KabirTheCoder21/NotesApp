@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/gradient_bcg"
+    android:background="#E2F7CA"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<androidx.cardview.widget.CardView
+    android:id="@+id/textCV"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="16dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardElevation="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="#F7E7EC">
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:hint="Enter Note here..."
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-    <EditText
-        android:id="@+id/input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:hint="Enter Note here..."
-        android:layout_margin="19dp"
-        android:textSize="16sp"
-/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#808000"
-        android:layout_margin="14dp"
-        android:elevation="6dp"
-        android:onClick="submitData"
-        android:src="@drawable/ic_baseline_add_circle_24"
-        app:fabSize="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent" />
-
+</androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="12dp"
-        app:layout_constraintTop_toBottomOf="@+id/input"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCV"
+        tools:listitem="@layout/item_note" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="#808000"
+        android:onClick="submitData"
+        android:src="@drawable/ic_baseline_add_circle_24"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_note"
-
-        />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

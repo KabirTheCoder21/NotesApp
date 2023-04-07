@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@color/teal_200">
+    android:background="#F7D6E1">
 
     <TextView
         android:id="@+id/text"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:layout_marginTop="16dp"
-        android:textColor="#212121"
+        android:textColor="#455F25"
         android:textSize="16sp"
         android:layout_marginLeft="12dp"
         app:layout_constraintLeft_toLeftOf="parent"

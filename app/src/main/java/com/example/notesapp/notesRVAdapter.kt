@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
 class notesRVAdapter(private val context:Context, private val listner:INotesRVAdapter): RecyclerView.Adapter<notesRVAdapter.NoteViewHolder>() {
@@ -34,14 +35,22 @@ class notesRVAdapter(private val context:Context, private val listner:INotesRVAd
     override fun getItemCount(): Int {
         return allNotes.size
     }
+
+    fun getNoteAtposition(position: Int) : Note
+    {
+        return allNotes[position]
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     fun updatedList(newList: List<Note>)
     {
         allNotes.clear()
         allNotes.addAll(newList)
         notifyDataSetChanged()
-    }
+     }
+
 }
+
 interface INotesRVAdapter{
     fun onItemClicked(note: Note)
 }
